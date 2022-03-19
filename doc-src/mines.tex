@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+%\geometry{a4paper}
+\usepackage{graphicx}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{hyperref}
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+
+\usepackage{makecell}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{FieldEngine}
+\author{Franklin E. Powers, Jr.}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+Vis Mines is a simple minesweeper clone created with RR (Restricted Roller - \href{https://sourceforge.net/projects/restricted-roller/}{https://sourceforge.net/projects/restricted-roller/})) and Field Engine (\href{https://sourceforge.net/projects/field-engine/}{https://sourceforge.net/projects/field-engine/}) for display.  A live example can be seen here: \href{https://vis-mines.sourceforge.io/app/index.html}{https://vis-mines.sourceforge.io/app/index.html}.  The project GIT repo can be found here: \href{https://github.com/Vis-LLC/Vis-Mines}{https://github.com/Vis-LLC/Vis-Mines}
+
+\subsection{Supported Programming Languages}
+\begin{center}
+\begin{tabular}{ | c | }
+\hline
+JavaScript \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Examples of Use}
+\begin{center}
+\begin{tabular}{ | c | c | c | }
+\hline
+Vis Mines & An open source Minesweeper clone. \\
+& Project Home & \href{https://sourceforge.net/projects/vis-mines/}{https://sourceforge.net/projects/vis-mines/} \\
+& Live Web Version & \href{https://vis-mines.sourceforge.io/app/index.html}{https://vis-mines.sourceforge.io/app/index.html} \\
+& Git Repo & \href{https://github.com/Vis-LLC/Vis-Mines}{https://github.com/Vis-LLC/Vis-Mines} \\
+\hline
+Vis Sudoku & An open source Sudoku clone. \\
+& Project Home & \href{https://sourceforge.net/projects/vis-sudoku/}{https://sourceforge.net/projects/vis-sudoku/} \\
+& Live Web Version & \href{https://vis-sudoku.sourceforge.io/app/index.html}{https://vis-sudoku.sourceforge.io/app/index.html} \\
+& Git Repo & \href{https://github.com/Vis-LLC/Vis-Sudoku}{https://github.com/Vis-LLC/Vis-Sudoku} \\
+\hline
+SDTK-UI & An open source data converter tool. \\
+& Project Home & \href{https://sourceforge.net/projects/simple-data-toolkit/}{https://sourceforge.net/projects/simple-data-toolkit/} \\
+& Live Web Version & \href{https://simple-data-toolkit.sourceforge.io/app/index.html}{https://simple-data-toolkit.sourceforge.io/app/index.html} \\
+& Git Repo & \href{https://github.com/Vis-LLC/Simple-Data-Toolkit-UI}{https://github.com/Vis-LLC/Simple-Data-Toolkit-UI} \\
+\hline
+\end{tabular}
+\end{center}
+\end{document}

@@ -190,27 +190,43 @@ var Game = {
             Game.Update(uncovered, needed);
         }
     },
-    SelectBox: function (l) {
+    SelectBox: function (l, b) {
         if (!l) {
             return;
         } else {
             var current = Date.now();
             var position = {x: l.getX(), y: l.getY()};
+            var update = false;
+            var state = "selected";
             if ((current - Game.LastInput) > 300) {
                 var CurrentBoard = Game.CurrentBoard;
                 if (!CurrentBoard.BoardChoices[position.y][position.x]) {
-                    Game.StatIncrement("Select Value", 1);
-                    CurrentBoard.BoardChoices[position.y][position.x] = " ";
-                    var o = CurrentBoard.PuzzleBoard[position.y][position.x];
-                    CurrentBoard.CurrentBoard[position.y][position.x] = o;
-                    Game.BoardField.refresh(function () {
-                        var l = Game.BoardField.get(position.x, position.y);
-                        l.attribute("player", "selected");
-                        l.doneWith();
-                        Game.BoardView.update();
-                        Game.CheckFinished();
-                    });
+                    if (b == 0) {
+                        Game.StatIncrement("Select Value", 1);
+                        CurrentBoard.BoardChoices[position.y][position.x] = " ";
+                        var o = CurrentBoard.PuzzleBoard[position.y][position.x];
+                        CurrentBoard.CurrentBoard[position.y][position.x] = o;
+                        update = true;
+                    } else {
+                        CurrentBoard.BoardChoices[position.y][position.x] = "F";
+                        CurrentBoard.CurrentBoard[position.y][position.x] = "F";
+                        update = true;
+                    }
+                } else if (b != 0) {
+                    CurrentBoard.BoardChoices[position.y][position.x] = "";
+                    CurrentBoard.CurrentBoard[position.y][position.x] = "";
+                    update = true;
+                    state = "selectable";
                 }
+            }
+            if (update) {
+                Game.BoardField.refresh(function () {
+                    var l = Game.BoardField.get(position.x, position.y);
+                    l.attribute("player", state);
+                    l.doneWith();
+                    Game.BoardView.update();
+                    Game.CheckFinished();
+                });
             }
         }
     },
@@ -477,7 +493,7 @@ var Game = {
         com.field.Events.locationSelect().addEventListener(function (e) {
             var field = e.field();
             if (field.equals(Game.BoardField)) {
-                Game.SelectBox(e.location());
+                Game.SelectBox(e.location(), e.button());
             }
         });
 
