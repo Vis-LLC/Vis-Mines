@@ -35,7 +35,7 @@
         </style>
         <script src="Game.js"></script>
     </head>
-    <body onload="Game.Init();Game.DisplaySavedGames();">
+    <body onload="Games.Mines.Init();Games.Mines.DisplaySavedGames();">
         <div id="Game" style="opacity:0;width:100%;height:100%;will-change:opacity;position:absolute;z-index:0;top:0px;left:0px;">
             <div id="Board" style="width:100%;height:100%;position:absolute;z-index:0;top:0px;left:0px">
             </div>
@@ -45,20 +45,20 @@
                 <div id="Timer" style="top:80%;left:0px;width:100%;height:10%;text-align:center;border-style:solid;border-width:thin">
                 </div>
                 <div id="Additional" style="top:90%;left:0px;width:100%;height:10%;text-align:center;">
-                    <input type="button" value="Exit" onclick="Game.ReturnToOptions();";>
+                    <input type="button" value="Exit" onclick="Games.Mines.ReturnToOptions();";>
                 </div>
             </div>
             <div id="Success" style="opacity:0;position:absolute;z-index:-1;will-change:opacity,transform;width:100%;height:100%;text-align:center;">
                 <div style="position:absolute;left:0%;width:100%;top:33%;z-index:1;">
                     <h1>Success</h1><br />
-                    <input type="button" value="Exit" onclick="Game.ReturnToOptions(true);";>
+                    <input type="button" value="Exit" onclick="Games.Mines.ReturnToOptions(true);";>
                 </div>
                 <div style="position:absolute;left:0%;top:0%;width:100%;height:100%;z-index:0;opacity:0.25;"></div>
             </div>
             <div id="Failed" style="opacity:0;position:absolute;z-index:-1;will-change:opacity,transform;width:100%;height:100%;text-align:center;">
                 <div style="position:absolute;left:0%;width:100%;top:33%;z-index:1;">
                     <h1>Failed</h1><br />
-                    <input type="button" value="Exit" onclick="Game.ReturnToOptions(true);";>
+                    <input type="button" value="Exit" onclick="Games.Mines.ReturnToOptions(true);";>
                 </div>
                 <div style="position:absolute;left:0%;top:0%;width:100%;height:100%;z-index:0;opacity:0.25;"></div>
             </div>
@@ -80,22 +80,22 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="button" value="Easy" onclick="Game.Start(this.value, 'Small');">
+                                    <input type="button" value="Easy" onclick="Games.Mines.Start(this.value, 'Small');">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="button" value="Medium" onclick="Game.Start(this.value, 'Medium');">
+                                    <input type="button" value="Medium" onclick="Games.Mines.Start(this.value, 'Medium');">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="button" value="Hard" onclick="Game.Start(this.value, 'Large');">
+                                    <input type="button" value="Hard" onclick="Games.Mines.Start(this.value, 'Large');">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="button" value="Very Hard" onclick="Game.Start(this.value, 'Very Large');">
+                                    <input type="button" value="Very Hard" onclick="Games.Mines.Start(this.value, 'Very Large');">
                                 </td>
                             </tr>
                             <tr>
@@ -108,7 +108,7 @@
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td><input type="button" value="Switch Theme" onclick="Game.SwitchTheme(document.body)"></td>
+                                <td><input type="button" value="Switch Theme" onclick="Games.Mines.SwitchTheme(document.body)"></td>
                             </tr>        
                         </table>
                     </td>
@@ -120,7 +120,19 @@
                 </tr>
                 <tr style="height:10vh;max-height:10vh;">
                     <td colspan="2" style="overflow-y: scroll;max-height: 10vh;height: 10vh;float: left;width: 200%;">
+                        <table style="width:100%;" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <h3>Copyright (c) 2021 by Vis, LLC.<br />
+                                        All Rights Reserved</h3>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="font-size: calc((75vw - 4rem) / 120)">
 			<!-- Insert app license agreement here -->
+                                </td>
+                            </tr>                            
+                        </table>
                     </td>
                 </tr>
             </table>
